@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Neon PostgreSQL Connection Settings -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://ep-round-salad-be5rjzht-pooler.c-9.us-east-2.aws.neon.tech/neondb?sslmode=require</property>
+        <property name="hibernate.connection.username">neondb_owner</property>
+        <property name="hibernate.connection.password">npg_SdgB8X1eyQha</property>
+
+        <!-- PostgreSQL Dialect & Pool -->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="hibernate.connection.pool_size">5</property>
+
+        <!-- Automatically create/update tables in Neon -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.show_sql">false</property>
+
+        <!-- Entity Mappings -->
+        <mapping class="com.leadflow.model.User"/>
+        <mapping class="com.leadflow.model.Lead"/>
+        <mapping class="com.leadflow.model.Message"/>
+        <mapping class="com.leadflow.model.EscalationLog"/>
+        <mapping class="com.leadflow.model.PaymentTransaction"/>
+        <mapping class="com.leadflow.model.SystemConfig"/>
+    </session-factory>
+</hibernate-configuration>
